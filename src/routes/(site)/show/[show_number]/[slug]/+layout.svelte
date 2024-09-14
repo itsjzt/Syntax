@@ -46,6 +46,8 @@
 	function variable_svg(node: HTMLElement) {
 		replace_color(node);
 	}
+
+	let downloadName = `Show #${show.number} - ${show.title}`;
 </script>
 
 <header>
@@ -102,7 +104,13 @@
 		</div>
 		<div>
 			<SaveOffline {show} />
-			<a class="icon" title="Download Episode" aria-label="Download" download href={show.url}>
+			<a
+				class="icon"
+				title="Download Episode"
+				aria-label="Download"
+				download={downloadName}
+				href={show.url}
+			>
 				<Icon name="download" />
 			</a>
 			<a
